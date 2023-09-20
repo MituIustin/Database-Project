@@ -1,0 +1,32 @@
+
+\addcontentsline{toc}{section}{Exercițiul 13}
+\section*{13. Implementarea a 3 operatii de actualizare si de suprimare a datelor utilizand subcereri.}
+\vspace{0.5cm}
+\begin{itemize}
+    \item 
+    \begin{lstlisting}
+UPDATE MALL
+SET nume_mall = 'Roby Mall'
+WHERE id_mall IN ( SELECT m.id_mall
+ FROM MALL m
+ JOIN PROMOVARE p ON m.id_promovare = p.id_promovare
+ WHERE p.nume_campanie = 'Campania de primavara');
+    \end{lstlisting}
+    \vspace{0.5cm}
+    \item 
+    \begin{lstlisting}
+UPDATE MALL
+SET dimensiune = dimensiune + 100
+WHERE id_mall IN ( SELECT id_mall
+ FROM PROMOVARE
+ WHERE data_sfarsit < TO_DATE('2023-09-01', 'YYYY-MM-DD'));
+    \end{lstlisting}
+    \vspace{0.5cm}
+    \item 
+    \begin{lstlisting}
+DELETE FROM PRODUS
+WHERE pret < (
+ SELECT AVG(pret) FROM PRODUS
+)-45;
+    \end{lstlisting}
+\end{itemize}
