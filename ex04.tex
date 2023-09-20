@@ -1,0 +1,125 @@
+
+\addcontentsline{toc}{section}{Exercițiul 4}
+\section*{4. Descrierea relatiilor, incluzand precizarea cardinalitatii acestora
+}
+\vspace{1cm}
+\begin{enumerate}
+    \item \textbf{MALL} contine \textbf{MAGAZIN}
+    \begin{itemize}
+        \item Fiecare mall are mai multe magazine afiliate (cel putin 1).
+        \item \textbf{1(1):n(1)}
+    \end{itemize}
+    
+    \vspace{0.5cm}
+
+    \item \textbf{MALL} angajeaza \textbf{FIRMA}
+    \begin{itemize}
+        \item Fiecare mall angajeaza o unica firma de securitate.
+        \item Firma de securitate poate lucra la mai multe mall-uri. 
+        \item \textbf{1(1):n(1)}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{PROMOVARE} promoveaza \textbf{MALL}
+    \begin{itemize}
+        \item Fiecare mall poate avea o unica campanie de promovare.
+        \item Nu e obligatoriu sa aiba una. 
+        \item \textbf{1(0):1(1)}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{MAGAZIN} detine \textbf{STOC}
+    \begin{itemize}
+        \item Fiecare magazin are un unic stoc.
+        \item \textbf{1(1):1(1)}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{MAGAZIN} are \textbf{RECLAMATIE}
+    \begin{itemize}
+        \item Un magazin poate avea mai multe reclamatii sau deloc.
+        \item Nu e obligatoriu sa aiba una. 
+        \item \textbf{1(1):1(0)}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{CHIRIAS} inchiriaza \textbf{MAGAZIN}
+    \begin{itemize}
+        \item Un magazin are un unic chirias.
+        \item Un chirias poate avea mai multe magazine. 
+        \item \textbf{1(1):n(1)}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{INTERN} lucreaza \textbf{MAGAZIN}
+    \begin{itemize}
+        \item Un magazin are mai multi interni.
+        \item Un intern poate lucra la un singur magazin. 
+        \item \textbf{n(1):1(1)}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{TRANZACTIE} exista \textbf{PRODUS}
+    \begin{itemize}
+        \item Intr-o tranzactie exista unul sau mai multe produse.
+        \item \textbf{1(1):n(1)}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{STOC} exista \textbf{PRODUS}
+    \begin{itemize}
+        \item Intr-un stoc exista unul sau mai multe produse.
+        \item \textbf{1(1):n(1)}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{CLIENT} realizeaza \textbf{RECLAMATIE}
+    \begin{itemize}
+        \item Un client poate face una sau mai multe reclamatii unui magazin.
+        \item \textbf{1(1):n(0)}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{PAZNIC} lucreaza \textbf{FIRMA}
+    \begin{itemize}
+        \item Un paznic lucreaza la o firma de securitate.
+        \item Firma detine unul sau mai multi paznici.
+        \item \textbf{n(1):1(1)}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item Relatia dintre entitatile \textbf{MAGAZIN}, \textbf{TRANZACTIE}, \textbf{CLIENT} (face)
+    \begin{itemize}
+        \item Un client poate face mai multe tranzactii din mai multe magazine.
+        \item Relatie de tip 3
+        \item Relatie ce se realizeaza prin intermediul tabelului asociativ \textbf{ACHIZITIE}
+        \item \textbf{n(1):n(1):n(1)}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{PAZNIC} este \textbf{ANGAJAT}
+    \begin{itemize}
+        \item PAZNIC reprezinta subentitatea tabelului ANGAJAT.
+        \item \textbf{1(1):1(1)}
+    \end{itemize}
+    
+    \vspace{0.5cm}
+
+    \item \textbf{INTERN} este \textbf{ANGAJAT}
+    \begin{itemize}
+        \item INTERN reprezinta subentitatea tabelului ANGAJAT.
+        \item \textbf{1(1):1(1)}
+    \end{itemize}
+    
+\end{enumerate}
