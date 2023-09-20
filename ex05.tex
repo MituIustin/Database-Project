@@ -1,0 +1,480 @@
+
+\addcontentsline{toc}{section}{Exercițiul 5}
+\section*{5. Descrierea atributelor, incluzand tipul de date si eventualele constrangeri, valori implicite, valori posibile ale atributelor.}
+\vspace{1cm}
+\begin{enumerate}
+
+    \item \textbf{MALL}
+    \begin{itemize}
+    
+        \item \textbf{id\_mall }
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al mall-ului.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+                
+        \item \textbf{tara}
+                \begin{itemize}
+                    \item Descriere: Reprezinta tara in care este situat mall-ul.
+                    \item Tip de date: VARCHAR2(50)
+                    \item Constrangeri: -
+                \end{itemize}
+
+        \item \textbf{nume\_mall}
+                \begin{itemize}
+                    \item Descriere: Reprezinta numele mall-ul.
+                    \item Tip de date: VARCHAR2(50)
+                    \item Constrangeri: -
+                \end{itemize}
+                
+        \item \textbf{dimensiune}
+                \begin{itemize}
+                    \item Descriere: Reprezinta dimensiunea mall-ul in $m^{2}$.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: -
+                \end{itemize}
+
+        \item \textbf{id\_firma}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul FIRMA (id\_firma) .
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA 
+                \end{itemize}
+
+        \item \textbf{id\_promovare}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul PROMOVARE (id\_promovare) .
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA 
+                \end{itemize}
+                
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{FIRMA}
+    \begin{itemize}
+    
+        \item \textbf{id\_firma }
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al firmei.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+                
+        \item \textbf{nume\_firma}
+                \begin{itemize}
+                    \item Descriere: Reprezinta numele firmei.
+                    \item Tip de date: VARCHAR2(50)
+                    \item Constrangeri: -
+                \end{itemize}
+                
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+
+    \item \textbf{PROMOVARE}
+    \begin{itemize}
+    
+        \item \textbf{id\_promovare }
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al campaniei de promovare.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+                
+        \item \textbf{nume\_campanie}
+                \begin{itemize}
+                    \item Descriere: Reprezinta numele campaniei.
+                    \item Tip de date: VARCHAR2(50)
+                    \item Constrangeri: -
+                \end{itemize}
+
+        \item \textbf{data\_inceput}
+                \begin{itemize}
+                    \item Descriere: Reprezinta data la care incepe campania de promovare (zi, luna, an).
+                    \item Tip de date: DATE
+                    \item Constrangeri: -
+                \end{itemize}
+
+        \item \textbf{data\_sfarsit}
+                \begin{itemize}
+                    \item Descriere: Reprezinta data la care se termina campania de promovare (zi, luna, an).
+                    \item Tip de date: DATE
+                    \item Constrangeri: -
+                \end{itemize}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{CHIRIAS}
+    \begin{itemize}
+    
+        \item \textbf{id\_chirias}
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al chiriasului.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+                
+        \item \textbf{nume\_chirias}
+                \begin{itemize}
+                    \item Descriere: Reprezinta numele chiriasului.
+                    \item Tip de date: VARCHAR2(50)
+                    \item Constrangeri: -
+                \end{itemize}
+
+        \item \textbf{email}
+                \begin{itemize}
+                    \item Descriere: Reprezinta email-ul chiriasului.
+                    \item Tip de date: VARCHAR2(30)
+                    \item Constrangeri: NOT NULL
+                \end{itemize}
+
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{MAGAZIN}
+    \begin{itemize}
+    
+        \item \textbf{id\_magazin}
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al magazinului.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+                
+        \item \textbf{nume\_magazin}
+                \begin{itemize}
+                    \item Descriere: Reprezinta numele magazinului.
+                    \item Tip de date: VARCHAR2(50)
+                    \item Constrangeri: -
+                \end{itemize}
+
+        \item \textbf{telefon}
+                \begin{itemize}
+                    \item Descriere: Reprezinta numarul de telefon al chiriasului.
+                    \item Tip de date: VARCHAR2(30)
+                    \item Constrangeri: NOT NULL
+                \end{itemize}
+
+        \item \textbf{profit\_lunar}
+                \begin{itemize}
+                    \item Descriere: Reprezinta profitul lunar facut de magazin.
+                    \item Tip de date: NUMBER(7)
+                    \item Constrangeri: -
+                \end{itemize}
+
+
+        \item \textbf{id\_chirias}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul CHIRIAS (id\_chirias).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA, NOT NULL
+                \end{itemize}
+
+        \item \textbf{id\_mall}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul MALL (id\_mall).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA, NOT NULL
+                \end{itemize}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{STOC}
+    \begin{itemize}
+    
+        \item \textbf{id\_stoc}
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al stocului.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+                
+       \item \textbf{id\_magazin}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul MAGAZIN (id\_magazin).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA, NOT NULL
+                \end{itemize}
+
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{TRANZACTIE}
+    \begin{itemize}
+    
+        \item \textbf{id\_tranzactie}
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al tranzactiei.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+                
+       \item \textbf{data\_ora}
+                \begin{itemize}
+                    \item Descriere: Reprezinta data si ora la care a fost facuta tranzactia.
+                    \item Tip de date: TIMPESTAMP
+                    \item Constrangeri: -
+                \end{itemize}
+
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{PRODUS}
+    \begin{itemize}
+    
+        \item \textbf{id\_produs}
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al produsului.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+
+        \item \textbf{nume\_produs}
+                \begin{itemize}
+                    \item Descriere: Reprezinta numele produsului.
+                    \item Tip de date: VARCHAR2(50)
+                    \item Constrangeri: -
+                \end{itemize}
+
+        \item \textbf{pret}
+                \begin{itemize}
+                    \item Descriere: Reprezinta pretul produsului.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: -
+                \end{itemize}
+                
+       \item \textbf{id\_stoc}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul STOC (id\_stoc).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA
+                \end{itemize}
+
+        \item \textbf{id\_tranzactie}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul TRANZACTIE (id\_tranzactie).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA
+                \end{itemize}
+                
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{CLIENT}
+    \begin{itemize}
+    
+        \item \textbf{id\_client}
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al clientului.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+
+        \item \textbf{nume\_client}
+                \begin{itemize}
+                    \item Descriere: Reprezinta numele clientului.
+                    \item Tip de date: VARCHAR2(40)
+                    \item Constrangeri: -
+                \end{itemize}
+        \item \textbf{email}
+                \begin{itemize}
+                    \item Descriere: Reprezinta email-ul clientului.
+                    \item Tip de date: VARCHAR2(30)
+                    \item Constrangeri: NOT NULL
+                \end{itemize}
+
+        \item \textbf{telefon}
+                \begin{itemize}
+                    \item Descriere: Reprezinta numarul de telefon al clientului.
+                    \item Tip de date: VARCHAR2(14)
+                    \item Constrangeri: -
+                \end{itemize}
+
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{RECLAMATIE}
+    \begin{itemize}
+    
+        \item \textbf{id\_reclamatie}
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al reclamatiei.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+
+        \item \textbf{data\_ora}
+                \begin{itemize}
+                    \item Descriere: Reprezinta data si ora la care a fost facuta reclamatia.
+                    \item Tip de date: TIMESTAMP
+                    \item Constrangeri: -
+                \end{itemize}
+
+        \item \textbf{motiv}
+                \begin{itemize}
+                    \item Descriere: Reprezinta motivul pentru care a fost facuta reclamatia.
+                    \item Tip de date: VARCHAR2(1000)
+                    \item Constrangeri: -
+                \end{itemize}
+                
+       \item \textbf{id\_magazin}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul MAGAZIN (id\_magazin).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA, NOT NULL
+                \end{itemize}
+
+        \item \textbf{id\_client}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul CLIENT (id\_client).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA, NOT NULL
+                \end{itemize}
+
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{ACHIZITIE}
+    \begin{itemize}
+    
+       \item \textbf{id\_magazin}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul MAGAZIN (id\_magazin).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA, NOT NULL
+                \end{itemize}
+
+        \item \textbf{id\_client}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul CLIENT (id\_client).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA, NOT NULL
+                \end{itemize}
+
+        \item \textbf{id\_tranzactie}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul TRANZACTIE (id\_tranzactie).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA, NOT NULL
+                \end{itemize}
+
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{ANGAJAT}
+    \begin{itemize}
+    
+        \item \textbf{id\_angajat}
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al angajatului.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+
+        \item \textbf{nume\_angajat}
+                \begin{itemize}
+                    \item Descriere: Reprezinta numele angajatului.
+                    \item Tip de date: VARCHAR2(30)
+                    \item Constrangeri: -
+                \end{itemize}
+
+        \item \textbf{salariu}
+                \begin{itemize}
+                    \item Descriere: Reprezinta salariulin lei al angajatului.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: -
+                \end{itemize}
+                
+       \item \textbf{data\_angajarii}
+                \begin{itemize}
+                    \item Descriere: Reprezinta data la care a fost angajat salariatul.
+                    \item Tip de date: DATE
+                    \item Constrangeri: -
+                \end{itemize}
+
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{PAZNIC}
+    \begin{itemize}
+    
+        \item \textbf{id\_paznic}
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al paznicului.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+
+        \item \textbf{norma}
+                \begin{itemize}
+                    \item Descriere: Reprezinta programul paznicului, care poate fi part-time sau full-time (adica norma intreaga).
+                    \item Tip de date: VARCHAR2(20);
+                    \item Constrangeri: -
+                \end{itemize}
+                
+       \item \textbf{id\_angajat}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul ANGAJAT (id\_angajat).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA, UNIQUE
+                \end{itemize}
+
+        \item \textbf{id\_firma}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul FIRMA (id\_firma).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA
+                \end{itemize}
+
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{INTERN}
+    \begin{itemize}
+    
+        \item \textbf{id\_intern}
+                \begin{itemize}
+                    \item Descriere: Reprezinta identificatorul unic al intern-ului.
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE PRIMARA, NOT NULL
+                \end{itemize}
+
+        \item \textbf{tura}
+                \begin{itemize}
+                    \item Descriere: Reprezinta programul intern-ului, care poate fi de zi sau sau de noapte.
+                    \item Tip de date: VARCHAR2(20);
+                    \item Constrangeri: -
+                \end{itemize}
+                
+       \item \textbf{id\_angajat}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul ANGAJAT (id\_angajat).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA, UNIQUE
+                \end{itemize}
+
+        \item \textbf{id\_magazin}
+                \begin{itemize}
+                    \item Descriere: Reprezinta cheie ce referentiaza tabelul MAGAZIN (id\_magazin).
+                    \item Tip de date: NUMBER(4)
+                    \item Constrangeri: CHEIE STRAINA
+                \end{itemize}
+
+    \end{itemize}
+    
+\end{enumerate}
