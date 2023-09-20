@@ -1,0 +1,31 @@
+
+\addcontentsline{toc}{section}{Exercițiul 9}
+\section*{9. Realizarea normalizarii pana la forma normala (FN1-FN3).}
+
+\vspace{1cm}
+
+\centering \textbf{FN1}
+
+\vspace{0.2cm}
+
+Avand in vedere faptul ca in baza de date proiectata o firma poate lucra la mai multe mall-uri se putea ca tabelul FIRMA, pe langa atributele id\_firma, nume\_firma, mai putea avea o lista care reprezenta mall-urile la care lucreaza. Acesta situatie incalca Forma Normala 1 deoarece unui atribut ii corespundeau mai multe valori. Astfel, solutia a fost sa creez o cheie straina in tabelul MALL. Aceasta cheie straina este cheia primara din tabelul FIRMA, si astfel fiecarui atribut ii corespunde o valoare indivizibila. 
+
+\vspace{0.5cm}
+
+\textbf{FN2}
+
+\vspace{0.2cm}
+
+In baza de date se poate observa entitatea ANGAJAT. Un caz ipotetic de proiectare, ar fi fost sa construiesc o singura entitate numita ANGAJAT care sa contina toate atributele (si cele de la INTERN si cele de la PAZNIC). In cazul in care angajatul in sine era un paznic spre exemplu, la altributele referitoare la “intern” aveam doar null, si vice-versa. Aceasta proiectare nu respecta Forma Normala 2 deoarece aduce redundanta, si un atribut ar depinde partial de cheia primara( alcatuita atunci din id\_angajat, id\_intern si id\_paznic) . Solutia a fost sa creez superentitatea ANGAJAT unde sa pastrez cateva atribute comune, si
+subentitatile INTERN si PAZNIC. Totodata, aceaste relatii dintre PAZNIC/INTERN si
+ANGAJAT sunt in FN1 deoarece fiecarui atribut ii corespunde o valoare indivizibila. Astfel, baza de date proiectata se afla in FN2 deoarece fiecare atribut (care nu participa la cheia primara) este dependent de intreaga cheie primara (si atributele din PAZNIC, dar si cele din INTERN).
+
+\vspace{0.5cm}
+
+\textbf{FN3}
+
+\vspace{0.2cm}
+
+In exemplul meu, in entitatea MAGAZIN, pe langa atributele magazinului deja
+existente (id\_magazin, nume\_magazin, telefon, profit\_lunar, id\_chirias, id\_mall) as mai fi putut adauga si atributele id\_chirias, nume\_chirias, email\_chirias, etc. Problema ar fi fost ca unele atribute (care nu erau chei) depindeau partial de cheia primara , si nu depindeau in intregime de cheia primara SI DOAR de aceasta. Astfel, aceasta entitate respecta FN1 (deoarece fiecarui atribut ii corespunde o valoare indivizibila, si nu respecta
+nici FN2 (deoarece atributele depindeau partial) si nici FN3. Solutia pentru a aduce aceasta entitate in FN3 a fost sa creez entitatea CHIRIAS si sa mut atributele dependente de id\_chirias (adica atributele nume\_chirias si email\_chirias) in noua entitate creata. Acum se respecta FN3 deoarece toate atrbutele depind integral de cheia primara si DOAR de aceasta. 
