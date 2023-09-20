@@ -1,0 +1,22 @@
+
+\addcontentsline{toc}{section}{Exercițiul 8}
+\section*{8. Enumerarea schemelor relationale corespunzatoare diagramei conceptuale.}
+
+\vspace{1cm}
+
+\begin{itemize}
+    \item \textbf{FIRMA} (id\_firma, nume\_firma)
+    \item \textbf{MALL} (id\_mall, tara, nume\_mall, dimensiune, id\_firma, id\_promovare)
+    \item \textbf{PROMOVARE} (id\_promovare, nume\_campanie, data\_inceput, data\_sfarsit)
+    \item \textbf{MAGAZIN} (id\_magazin, nume\_magazin, telefon, profit\_lunar, id\_chirias, id\_mall)
+    \item \textbf{ANGAJAT} (id\_angajat, nume\_angajat, salariu, data\_angajarii)
+    \item \textbf{PAZNIC} (id\_paznic, norma, id\_angajat, id\_firma)
+    \item \textbf{INTERN} (id\_intern, tura, id\_angajat, id\_magazin)
+    \item \textbf{CHIRIAS} (id\_chirias, nume\_chirias, email)
+    \item \textbf{RECLAMATIE} (id\_reclamatie, data\_ora, motiv, id\_magazin, id\_client)
+    \item \textbf{CLIENT} (id\_client, nume\_client, email, telefon)
+    \item \textbf{TRANZACTIE} (id\_tranzactie, data\_ora)
+    \item \textbf{ACHIZITIE} (id\_client, id\_magazin, id\_tranzactie)
+    \item \textbf{PRODUS} (id\_produs, nume\_produs, pret, id\_stoc, id\_tranzactie)
+    \item \textbf{STOC} (id\_stoc, id\_magazin)
+\end{itemize}
