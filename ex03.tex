@@ -1,0 +1,210 @@
+
+\addcontentsline{toc}{section}{Exercițiul 3}
+\section*{3. Descrierea entitatilor, incluzand precizarea cheii primare.}
+
+\vspace{1cm}
+
+Pentru modelul de date referitor la lantul de mall-uri, structurile MALL, MAGAZIN, FIRMA, PRODUS, CLIENT, ANGAJAT, TRANZACTIE, RECLAMATIE, STOC,
+CHIRIAS, PROMOVARE reprezinta entitati.
+
+Toate entitatile sunt independente mai putin entitatea RECLAMATIE (care va
+depinde de client si magazinul caruia i s-a atribuit aceasta reclamatie).
+
+\subsection*{\centering ENTITATILE DE BAZA}
+
+Acestea reprezinta substantivele preluate din descrierea bazei de date, entitatile necesare pentru a o prelucra.
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item \textbf{MALL}
+    - O institutie comerciala ce detine mai multe magazine. Mall-ul are scopul
+    de a scoate profit din locurile comerciale inchiriate.
+
+    \begin{itemize}
+        \item CHEIE PRIMARA = \textbf{id\_mall}
+        \item CHEI STRAINE 
+                            \begin{itemize}
+                                \item \textbf{id\_firma} care referentiaza tabela FIRMA (id\_firma)
+                                \item \textbf{id\_promovare} care referentiaza tabela PROMOVARE (id\_promovare)
+                            \end{itemize}
+            
+    \end{itemize}
+
+    \vspace{0.5cm}
+    
+    \item \textbf{MAGAZIN}
+    - Un spatiu comercial destinat persoanelor publice. In cadrul unui
+magazin se realizeaza mai multe tranzactii de catre clienti.
+
+    \begin{itemize}
+        \item CHEIE PRIMARA = \textbf{id\_magazin}
+        \item CHEI STRAINE 
+                            \begin{itemize}
+                                \item \textbf{id\_chirias} care referentiaza tabela CHIRIAS (id\_chirias)
+                                \item \textbf{id\_mall} care referentiaza tabela MALL (id\_mall)
+                            \end{itemize}
+            
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{FIRMA}
+    - – Reprezinta firma de securitate. Aceasta are rolul de a mentine linistea
+si buna functionare a mall-ului. Acest aspect se realizeaza cu ajutorul angajatilor.
+
+    \begin{itemize}
+        \item CHEIE PRIMARA = \textbf{id\_firma}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{PRODUS}
+    - Un obiect sau serviciu vandut intr-un magazin. Acesta poate fi
+achizitionat de un client in urma unei tranzactii.
+
+    \begin{itemize}
+        \item CHEIE PRIMARA = \textbf{id\_produs}
+        \item CHEI STRAINE 
+                            \begin{itemize}
+                                \item \textbf{id\_stoc} care referentiaza tabela STOC (id\_stoc)
+                                \item \textbf{id\_tranzactie} care referentiaza tabela TRANZACTIE (id\_tranzactie)
+                            \end{itemize}
+            
+    \end{itemize}
+
+        \vspace{0.5cm}
+
+        \item \textbf{CLIENT}
+    - Persoana care nu poate fi angajat in acelasi timp. El poate doar sa
+viziteze un magazin, nu e obligat sa faca tranzactii.
+
+    \begin{itemize}
+        \item CHEIE PRIMARA = \textbf{id\_client}
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{ANGAJAT}
+    - Persoana care poate fi INTERN intr-un magazin , sau PAZNIC de la
+firma de securitate. Aceasta este o superentitate.
+
+    \begin{itemize}
+        \item CHEIE PRIMARA = \textbf{id\_angajat}    
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \begin{enumerate}
+        \item \textbf{INTERN}
+        - Persoana care lucreaza in interiorul unui magazin. Spre exemplu personalul de la casa de marcat sau personalul care se ocupa cu aranjatul hainelor. 
+
+        \begin{itemize}
+        \item CHEIE PRIMARA = \textbf{id\_intern}
+        \item CHEI STRAINE 
+                            \begin{itemize}
+                                \item \textbf{id\_angajat} care referentiaza tabela ANGAJAT (id\_angajat)
+                                \item \textbf{id\_magazin} care referentiaza tabela MAGAZIN (id\_magazin)
+                            \end{itemize}
+            
+        \end{itemize}
+
+         \vspace{0.5cm}
+        
+        \item \textbf{PAZNIC}
+        - Persoana care lucreaza in interiorul unui mall. Acesta are scopul de a asigura linistea si siguranta clientilor. Acesta este bineinteles in stransa legatura cu firma de securitate la care lucreaza.
+
+        \begin{itemize}
+        \item CHEIE PRIMARA = \textbf{id\_paznic}
+        \item CHEI STRAINE 
+                            \begin{itemize}
+                                \item \textbf{id\_angajat} care referentiaza tabela ANGAJAT (id\_angajat)
+                                \item \textbf{id\_mall} care referentiaza tabela FIRMA (id\_firma)
+                            \end{itemize}
+            
+        \end{itemize}
+    \end{enumerate}
+
+    \vspace{0.5cm}
+    
+     \item \textbf{TRANZACTIE}
+    - Entitate ce contine informatii precum cine a realizat tranzactia,
+metoda de plata, ce produse a cumparat, etc.
+
+    \begin{itemize}
+        \item CHEIE PRIMARA = \textbf{id\_tranzactie}
+            
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{RECLAMATIE}
+    - Entitate ce contine informatii precum cine a realizat reclamatia,
+si motivul. Reclamatia poate fi creata doar de un client oricand acesta considera ca are un motiv pentru a face o reclamatie.
+
+    \begin{itemize}
+        \item CHEIE PRIMARA (COMPUSA) = \textbf{id\_reclamatie + id\_magazin + id\_client}
+        \item CHEI STRAINE 
+                            \begin{itemize}
+                                \item \textbf{id\_magazin} care referentiaza tabela MAGAZIN (id\_magazin)
+                                \item \textbf{id\_client} care referentiaza tabela CLIENT (id\_client)
+                            \end{itemize}
+            
+    \end{itemize}
+
+    \vspace{0.5cm}
+    
+    \item \textbf{STOC}
+    - Entitate ce contine informatii precum cate produse mai sunt valabile,
+numarul minim si maxim necesar de produse.
+
+    \begin{itemize}
+        \item CHEIE PRIMARA = \textbf{id\_stoc}
+        \item CHEIE STRAINA
+                            \begin{itemize}
+                                \item \textbf{id\_magazin} care referentiaza tabela MAGAZIN (id\_magazin)
+                            \end{itemize}
+            
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{CHIRIAS}
+    - Persoana care detine cel putin un magazin.
+    
+    \begin{itemize}
+        \item CHEIE PRIMARA = \textbf{id\_chirias}      
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \textbf{PROMOVARE}
+    - Reprezinta campania de promovare a unui mall. 
+
+    \begin{itemize}
+        \item CHEIE PRIMARA = \textbf{id\_promovare}
+    \end{itemize}
+    
+\end{enumerate}
+
+
+\subsection*{\centering ENTITATILE ASOCIATIVE}
+
+Acestea reprezinta entitatile create in urma relatiilor de tip 3 sau de tip many-to-many
+
+
+\begin{enumerate}
+    \item \textbf{ACHIZITIE}
+    - Aceasta entitate a fost creata in urma relatiei de tip 3 intre entitatile TRANZACTIE, MAGAZIN si CLIENT. Aceasta are scopul de a pastra informatii precum: ce contine produse contine tranzactia, cine a realizat-o si magazinul in care s-a realizat.
+    
+    \begin{itemize}
+        \item CHEIE PRIMARA (COMPUSA) = \textbf{id\_client + id\_magazin + id\_tranzactie}      
+    
+    \item CHEI STRAINE
+                            \begin{itemize}
+                                \item \textbf{id\_client} care referentiaza tabela CLIENT (id\_client)
+                                \item \textbf{id\_magazin} care referentiaza tabela MAGAZIN (id\_magazin)
+                                \item \textbf{id\_tranzactie} care referentiaza tabela TRANZACTIE (id\_tranzactie)
+                            \end{itemize}
+    \end{itemize}
+\end{enumerate}
