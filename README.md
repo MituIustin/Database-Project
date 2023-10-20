@@ -26,7 +26,7 @@ The project is carried out as part of the database course. It manages the databa
 
 ## LaTeX code used for styling the SQL code from PDF :
 
-```md
+```tex
 \usepackage{graphicx}
 \usepackage{indentfirst}
 \usepackage{tocloft}
